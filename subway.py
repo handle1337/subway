@@ -93,7 +93,7 @@ def main():
 	parser = ArgumentParser(description="Enumerate subdomains and URLs",
 							usage="use '%(prog)s --help' for more information",
 							formatter_class=RawTextHelpFormatter)
-	parser.add_argument("--banner", "-b", default=False, help="Print banner at program startup")
+	parser.add_argument("--banner", "-b", action='store_true', help="Print banner at program startup")
 	parser.add_argument("--url", "-u", required=True, help="Target URL")
 	parser.add_argument("--output", "-o", nargs='+', dest="output", help="Output file", type=FileType('w'))
 	parser.add_argument("--dwordlist", "-dw", nargs='?', default=sys.stdin, type=FileType('r'),
@@ -102,17 +102,17 @@ def main():
 						help="Subdomain wordlist")
 	parser.add_argument("--multisub", "-ms", help="Multilevel subdomain enumeration")
 	parser.add_argument("--recdir", "-rd", help="Recurisve directory fuzzing")
-	parser.add_argument("--crawl", "-c", help="Crawl source for URLs")
-	parser.add_argument("--outurl", "-ou", help="Output ALL found URLs")
-	parser.add_argument("--inurl", "-iu", default="True",
-						help="[SUBDOMAIN ENUMERATION] Include URLs that belong to the site")
-	parser.add_argument("--inaurl", "-iau", default="False",
-						help="[SUBDOMAIN ENUMERATION] Include ALL found URLs")
+	parser.add_argument("--crawl", "-c", action='store_true', help="Crawl source for URLs")
+	parser.add_argument("--outurl", "-ou", action='store_true', help="Output ALL found URLs")
+	parser.add_argument("--inurl", "-iu", action='store_true',
+						help="[SUBDOMAIN ENUMERATION] Include URLs that are found inside the site's source [href]")
+	parser.add_argument("--inaurl", "-iau", action='store_true',
+						help="[SUBDOMAIN ENUMERATION] Include ALL found URLs in the site's source [href]")
 	args = parser.parse_args()
 	
 	
 	if args.banner:
-		print(banner)
+		print(BANNER)
 	if args.url:
 		url = args.url
 	# ======================================================================
