@@ -40,8 +40,7 @@ def bruteforce(wordlist, output_file, url):
         f_wordlist = open(wordlist, 'r')
         if output_file:
             f_output = open(output_file, 'w')
-        lines = f_wordlist.readlines()
-        for line in lines:
+        for line in f_wordlist:
             sub = check_status(f"{line.strip()}.{url}")
             if sub:
                 if output_file:
