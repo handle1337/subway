@@ -20,15 +20,13 @@ optional arguments:
   --banner, -b          disable banner
   --url URL, -u URL     Target URL
   --output OUTPUT, -o OUTPUT
-                        Output file
+                        output file
   --wordlist WORDLIST, -w WORDLIST
                         Subdomain wordlist
-  --multisub MULTISUB, -ms MULTISUB
+  --multisub MULTISUB, -m MULTISUB
                         multilevel subdomain enumeration
-  --crawl, -c           crawl source for URLs
-  --outurl, -ou         output ALL found URLs
-  --inurl, -iu          include URLs that are found inside the site's source [href]
-  --inaurl, -iau        include ALL found URLs in the site's source [href]
+  --inurl, -I           include URLs that are found inside the site's source and belong to the same domain (html/js files)
+  --inaurl, -A          include ALL found URLs in the site's source (html/js files)
 
 ```
 ## Examples
