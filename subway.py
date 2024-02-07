@@ -51,19 +51,6 @@ def bruteforce(wordlist, output_file, url):
         print(colored(f"[ERROR] {str(e)}", "red"))
 
 
-"""def recursive_bruteforce(file, tmpfile, depth):
-    url_l = url
-    for i in range(depth):
-        for line in file:
-            url_l = line + "." + url_l
-            if check_status(url_l):
-                tmpfile.write(check_status() + "\n")
-                url_l = url_l + "/" + line
-                file = tmpfile
-                #Theres a massive logic flaw in this function, do not use until fixed
-                """
-
-
 def check_status(url_l):
     try:
         print(f"[*]Currently trying: {url_l}")
