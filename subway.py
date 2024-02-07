@@ -127,41 +127,8 @@ def main():
         bruteforce(wordlist, output, url)
     except KeyboardInterrupt:
         print(f"\n\nYou have exited the program...")
-    
-    # ======================================================================
-    # The purpose of this code is to save time by fuzzing subdomains
-    # recursively by using process of elimination to create
-    # a new wordlist to be used in the next iteration/depth
-    # ======================================================================
-    
+   
 
-
-"""	if args.multisub:
-        temp_wordlist = tempfile.mkstemp()
-        with os.fdopen(temp_wordlist, 'w') as tmp_f:
-                with open(wordlist) as wordlist_f:
-                    recursive_bruteforce(wordlist_f, tmp_f, args.multisub[1])
-        os.remove(temp_wordlist)
-
-    # ======================================================================
-
-    
-
-    if args.crawl:
-        r = s_request(url)
-        for link in BeautifulSoup(r, parse_only=SoupStrainer('a')):
-            for i in link:
-                if link.has_attr('href'):
-                    print(link['href'])
-                    if args.outurl:
-                        pass
-                    if args.inurl:
-                        pass
-                    if args.inaurl:
-                        pass
-                        """
-
-    #TODO: multithread this shit
 
 if __name__ == "__main__":
     main()
